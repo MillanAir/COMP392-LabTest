@@ -94,7 +94,7 @@ var game = (() => {
         
         //Add a Fifthcube to the Scene
         cubeGeometry = new BoxGeometry(10, 5, 10);
-        cubeMaterial = new LambertMaterial({ color: 0xffd299 });
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
         fifthCube = new Mesh(cubeGeometry, cubeMaterial);
         fifthCube.castShadow = true;
 
@@ -107,7 +107,7 @@ var game = (() => {
         
         //Add a Fourthcube to the Scene
         cubeGeometry = new BoxGeometry(7, 4, 7);
-        cubeMaterial = new LambertMaterial({ color: 0x8f7219 });
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
         fourthCube = new Mesh(cubeGeometry, cubeMaterial);
         fourthCube.castShadow = true;
 
@@ -120,7 +120,7 @@ var game = (() => {
         
         //Add a thirdcube to the Scene
         cubeGeometry = new BoxGeometry(5, 3, 5);
-        cubeMaterial = new LambertMaterial({ color: 0x2f2119 });
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
         thirdCube = new Mesh(cubeGeometry, cubeMaterial);
         thirdCube.castShadow = true;
 
@@ -133,7 +133,7 @@ var game = (() => {
         
         //Add a secondcube to the Scene
         cubeGeometry = new BoxGeometry(3, 2, 3);
-        cubeMaterial = new LambertMaterial({ color: 0x44f4ff });
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
         secondCube = new Mesh(cubeGeometry, cubeMaterial);
         secondCube.castShadow = true;
 
@@ -146,7 +146,7 @@ var game = (() => {
         
         //Add a firstcube to the Scene
         cubeGeometry = new BoxGeometry(1, 1, 1);
-        cubeMaterial = new LambertMaterial({ color: 0x4499ff });
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
         firstCube = new Mesh(cubeGeometry, cubeMaterial);
         firstCube.castShadow = true;
 
@@ -205,7 +205,7 @@ var game = (() => {
         fifthCube.rotation.y += control.rotationFifth;
         
         //generate Random color
-        
+        firstCube.material
         
         
         // render using requestAnimationFrame
