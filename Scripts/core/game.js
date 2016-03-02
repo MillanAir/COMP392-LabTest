@@ -48,6 +48,7 @@ var game = (function () {
     var thirdCube;
     var secondCube;
     var firstCube;
+    var spotLight;
     function init() {
         // Instantiate a new Scene object
         //scene = new Scene();
@@ -58,6 +59,14 @@ var game = (function () {
         ambientLight = new AmbientLight(0xffffff);
         scene.add(ambientLight);
         console.log("Added an Ambient Light to Scene");
+        // Add a SpotLight to the scene
+        spotLight = new SpotLight(0xffffff);
+        spotLight.position.set(-40, 60, -10);
+        spotLight.castShadow = true;
+        spotLight.shadowMapHeight = 2048;
+        spotLight.shadowMapWidth = 2048;
+        scene.add(spotLight);
+        console.log("Added Spot Light to Scene");
         // add an axis helper to the scene
         // Green = y, Blue = x, Red = z
         axes = new AxisHelper(20);
@@ -82,7 +91,7 @@ var game = (function () {
         fifthCube = new Mesh(cubeGeometry, cubeMaterial);
         fifthCube.castShadow = true;
         fifthCube.position.x = 0;
-        fifthCube.position.y = 5;
+        fifthCube.position.y = 2.5;
         fifthCube.position.z = 0;
         scene.add(fifthCube);
         console.log("Added Fifth Cube to the scene");
@@ -92,7 +101,7 @@ var game = (function () {
         fourthCube = new Mesh(cubeGeometry, cubeMaterial);
         fourthCube.castShadow = true;
         fourthCube.position.x = 0;
-        fourthCube.position.y = 9;
+        fourthCube.position.y = 7;
         fourthCube.position.z = 0;
         scene.add(fourthCube);
         console.log("Added fourth Cube to the scene");
@@ -102,7 +111,7 @@ var game = (function () {
         thirdCube = new Mesh(cubeGeometry, cubeMaterial);
         thirdCube.castShadow = true;
         thirdCube.position.x = 0;
-        thirdCube.position.y = 12;
+        thirdCube.position.y = 11;
         thirdCube.position.z = 0;
         scene.add(thirdCube);
         console.log("Added third Cube to the scene");
@@ -122,7 +131,7 @@ var game = (function () {
         firstCube = new Mesh(cubeGeometry, cubeMaterial);
         firstCube.castShadow = true;
         firstCube.position.x = 0;
-        firstCube.position.y = 15;
+        firstCube.position.y = 15.5;
         firstCube.position.z = 0;
         scene.add(firstCube);
         console.log("Added first Cube to the scene");

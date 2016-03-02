@@ -53,6 +53,7 @@ var game = (() => {
     var thirdCube: Mesh;
     var secondCube: Mesh;
     var firstCube: Mesh;
+    var spotLight: SpotLight;
 
     function init() {
         // Instantiate a new Scene object
@@ -69,6 +70,15 @@ var game = (() => {
         ambientLight = new AmbientLight(0xffffff);
         scene.add(ambientLight);
         console.log("Added an Ambient Light to Scene");
+        
+        // Add a SpotLight to the scene
+        spotLight = new SpotLight(0xffffff);
+        spotLight.position.set(-40, 60, -10);
+        spotLight.castShadow = true;
+        spotLight.shadowMapHeight=2048;
+        spotLight.shadowMapWidth = 2048;
+        scene.add(spotLight);
+        console.log("Added Spot Light to Scene");
         
         // add an axis helper to the scene
         // Green = y, Blue = x, Red = z
@@ -94,12 +104,12 @@ var game = (() => {
         
         //Add a Fifthcube to the Scene
         cubeGeometry = new BoxGeometry(10, 5, 10);
-        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff) });
         fifthCube = new Mesh(cubeGeometry, cubeMaterial);
         fifthCube.castShadow = true;
 
         fifthCube.position.x = 0;
-        fifthCube.position.y = 5;
+        fifthCube.position.y = 2.5;
         fifthCube.position.z = 0;
 
         scene.add(fifthCube);
@@ -107,12 +117,12 @@ var game = (() => {
         
         //Add a Fourthcube to the Scene
         cubeGeometry = new BoxGeometry(7, 4, 7);
-        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff) });
         fourthCube = new Mesh(cubeGeometry, cubeMaterial);
         fourthCube.castShadow = true;
 
         fourthCube.position.x = 0;
-        fourthCube.position.y = 9;
+        fourthCube.position.y = 7;
         fourthCube.position.z = 0;
 
         scene.add(fourthCube);
@@ -120,12 +130,12 @@ var game = (() => {
         
         //Add a thirdcube to the Scene
         cubeGeometry = new BoxGeometry(5, 3, 5);
-        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff) });
         thirdCube = new Mesh(cubeGeometry, cubeMaterial);
         thirdCube.castShadow = true;
 
         thirdCube.position.x = 0;
-        thirdCube.position.y = 12;
+        thirdCube.position.y = 11;
         thirdCube.position.z = 0;
 
         scene.add(thirdCube);
@@ -133,7 +143,7 @@ var game = (() => {
         
         //Add a secondcube to the Scene
         cubeGeometry = new BoxGeometry(3, 2, 3);
-        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff) });
         secondCube = new Mesh(cubeGeometry, cubeMaterial);
         secondCube.castShadow = true;
 
@@ -146,12 +156,12 @@ var game = (() => {
         
         //Add a firstcube to the Scene
         cubeGeometry = new BoxGeometry(1, 1, 1);
-        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff)});
+        cubeMaterial = new LambertMaterial({ color: (Math.random() * 0xffffff) });
         firstCube = new Mesh(cubeGeometry, cubeMaterial);
         firstCube.castShadow = true;
 
         firstCube.position.x = 0;
-        firstCube.position.y = 15;
+        firstCube.position.y = 15.5;
         firstCube.position.z = 0;
 
         scene.add(firstCube);
