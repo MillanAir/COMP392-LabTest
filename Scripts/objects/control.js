@@ -4,7 +4,12 @@ var objects;
     // CONTROL CLASS ++++++++++++++++++++++++++++++++++++++++++
     var Control = (function () {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        function Control() {
+        function Control(rotationFirst, rotationSecond, rotationThird, rotationFourth, rotationFifth) {
+            this.rotationFirst = rotationFirst;
+            this.rotationSecond = rotationSecond;
+            this.rotationThird = rotationThird;
+            this.rotationFourth = rotationFourth;
+            this.rotationFifth = rotationFifth;
         }
         return Control;
     }());
