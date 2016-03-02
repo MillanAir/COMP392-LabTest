@@ -93,7 +93,7 @@ var game = (() => {
         console.log("Added the plane to the scene");
         
         //Add a Fifthcube to the Scene
-        cubeGeometry = new BoxGeometry(10,5,10);
+        cubeGeometry = new BoxGeometry(10, 5, 10);
         cubeMaterial = new LambertMaterial({ color: 0xffd299 });
         fifthCube = new Mesh(cubeGeometry, cubeMaterial);
         fifthCube.castShadow = true;
@@ -102,11 +102,11 @@ var game = (() => {
         fifthCube.position.y = 5;
         fifthCube.position.z = 0;
 
-        scene.add(fifthCube);        
+        scene.add(fifthCube);
         console.log("Added Fifth Cube to the scene");
         
         //Add a Fourthcube to the Scene
-        cubeGeometry = new BoxGeometry(7,4,7);
+        cubeGeometry = new BoxGeometry(7, 4, 7);
         cubeMaterial = new LambertMaterial({ color: 0x8f7219 });
         fourthCube = new Mesh(cubeGeometry, cubeMaterial);
         fourthCube.castShadow = true;
@@ -115,11 +115,11 @@ var game = (() => {
         fourthCube.position.y = 9;
         fourthCube.position.z = 0;
 
-        scene.add(fourthCube);        
+        scene.add(fourthCube);
         console.log("Added fourth Cube to the scene");
         
         //Add a thirdcube to the Scene
-        cubeGeometry = new BoxGeometry(5,3,5);
+        cubeGeometry = new BoxGeometry(5, 3, 5);
         cubeMaterial = new LambertMaterial({ color: 0x2f2119 });
         thirdCube = new Mesh(cubeGeometry, cubeMaterial);
         thirdCube.castShadow = true;
@@ -128,11 +128,11 @@ var game = (() => {
         thirdCube.position.y = 12;
         thirdCube.position.z = 0;
 
-        scene.add(thirdCube);        
+        scene.add(thirdCube);
         console.log("Added third Cube to the scene");
         
         //Add a secondcube to the Scene
-        cubeGeometry = new BoxGeometry(3,2,3);
+        cubeGeometry = new BoxGeometry(3, 2, 3);
         cubeMaterial = new LambertMaterial({ color: 0x44f4ff });
         secondCube = new Mesh(cubeGeometry, cubeMaterial);
         secondCube.castShadow = true;
@@ -141,11 +141,11 @@ var game = (() => {
         secondCube.position.y = 14;
         secondCube.position.z = 0;
 
-        scene.add(secondCube);        
+        scene.add(secondCube);
         console.log("Added second Cube to the scene");
         
         //Add a firstcube to the Scene
-        cubeGeometry = new BoxGeometry(1,1,1);
+        cubeGeometry = new BoxGeometry(1, 1, 1);
         cubeMaterial = new LambertMaterial({ color: 0x4499ff });
         firstCube = new Mesh(cubeGeometry, cubeMaterial);
         firstCube.castShadow = true;
@@ -154,7 +154,7 @@ var game = (() => {
         firstCube.position.y = 15;
         firstCube.position.z = 0;
 
-        scene.add(firstCube);        
+        scene.add(firstCube);
         console.log("Added first Cube to the scene");
         
         /* CODE ENDS HERE */
@@ -162,7 +162,7 @@ var game = (() => {
  
         // add controls
         gui = new GUI();
-        control = new Control(0.01,0.02,0.03,0.04,0.05);
+        control = new Control(0.01, 0.02, 0.03, 0.04, 0.05);
         addControl(control);
 
         // Add framerate stats
@@ -176,7 +176,7 @@ var game = (() => {
 
     function addControl(controlObject: Control): void {
         /* ENTER CODE for the GUI CONTROL HERE */
-        
+
         gui.add(controlObject, 'rotationFirst', -0.5, 0.5);
         gui.add(controlObject, 'rotationSecond', -0.5, 0.5);
         gui.add(controlObject, 'rotationThird', -0.5, 0.5);
@@ -196,6 +196,17 @@ var game = (() => {
     // Setup main game loop
     function gameLoop(): void {
         stats.update();
+        
+        //animate Tappered Tower
+        firstCube.rotation.y += control.rotationFirst;
+        secondCube.rotation.y += control.rotationSecond;
+        thirdCube.rotation.y += control.rotationThird;
+        fourthCube.rotation.y += control.rotationFourth;
+        fifthCube.rotation.y += control.rotationFifth;
+        
+        //generate Random color
+        
+        
         
         // render using requestAnimationFrame
         requestAnimationFrame(gameLoop);

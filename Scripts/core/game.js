@@ -156,6 +156,13 @@ var game = (function () {
     // Setup main game loop
     function gameLoop() {
         stats.update();
+        //animate Tappered Tower
+        firstCube.rotation.y += control.rotationFirst;
+        secondCube.rotation.y += control.rotationSecond;
+        thirdCube.rotation.y += control.rotationThird;
+        fourthCube.rotation.y += control.rotationFourth;
+        fifthCube.rotation.y += control.rotationFifth;
+        //generate Random color
         // render using requestAnimationFrame
         requestAnimationFrame(gameLoop);
         // render the scene
